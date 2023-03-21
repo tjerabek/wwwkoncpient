@@ -218,7 +218,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <Link
-                  href="https://app.koncipient.info"
+                  href="mailto:info@koncipient.info"
                   className={[
                     "text-base font-semibold bg-gray-200 text-black py-2 px-5 rounded-md block text-center transition",
                     "hover:bg-purple-800 hover:text-white",
