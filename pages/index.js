@@ -26,6 +26,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-EHRPHCKZEG"
+      />
+      <Script id="ga" strategy="afterInteractive">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EHRPHCKZEG');
+        `}
+      </Script>
       <Script id="hotjar" strategy="afterInteractive">
         {`
     (function(h,o,t,j,a,r){
