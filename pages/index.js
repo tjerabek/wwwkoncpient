@@ -29,6 +29,7 @@ export default function Home() {
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-EHRPHCKZEG"
       />
+      <Script src="https://cdn.volument.com/v1/volument-full.js" token="30248013af" />
       <Script id="ga" strategy="afterInteractive">
         {`
         window.dataLayer = window.dataLayer || [];
