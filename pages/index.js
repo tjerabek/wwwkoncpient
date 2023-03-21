@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import { Figtree } from "next/font/google";
 import bg from "../public/hero-bg.jpg";
@@ -25,6 +26,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script id="hotjar" strategy="afterInteractive">
+        {`
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3416274,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    `}
+      </Script>
       <div className="antialiased">
         <header className="border-b border-b-gray-100 py-6 px-6 md:px-0">
           <div className="container mx-auto">
