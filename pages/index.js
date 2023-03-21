@@ -3,7 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import { Figtree } from "next/font/google";
-import bg from '../public/hero-bg.jpg';
+import bg from "../public/hero-bg.jpg";
+import {
+  CheckCircle,
+  CheckCircle2,
+  Eye,
+  FileText,
+  Glasses,
+  LayoutDashboard,
+  Pilcrow,
+} from "lucide-react";
 const inter = Inter({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -30,7 +39,10 @@ export default function Home() {
           </div>
         </header>
         <main className={inter.className}>
-          <div className="bg-cover bg-no-repeat bg-bottom" style={{backgroundImage: `url(${bg.src})`}}>
+          <div
+            className="bg-cover bg-no-repeat bg-bottom"
+            style={{ backgroundImage: `url(${bg.src})` }}
+          >
             <div className="container mx-auto flex flex-col space-y-6 py-10 md:py-20 px-6 md:px-0">
               <div className="space-y-5">
                 <h1
@@ -50,8 +62,8 @@ export default function Home() {
                 <Link
                   href="https://app.koncipient.info"
                   className={[
-                    "text-xl font-semibold bg-black text-white py-4 px-10 rounded-md block text-center transition",
-                    "hover:bg-purple-800",
+                    "text-xl font-semibold bg-black text-white py-4 px-10 rounded-md block text-center transition shadow-xl",
+                    "hover:bg-purple-800 hover:shadow-2xl",
                     "md:inline-block",
                     figtree.className,
                   ].join(" ")}
@@ -71,33 +83,82 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="container mx-auto">
-              <h2>Rychlá analýza smluv</h2>
-              <p>AI Koncipient během několika vteřin přečte až 10 stran A4</p>
-              <p>
-                AI Koncipient vytvoří srozumitelný přehled problémů na které
-                během čtení narazil
-              </p>
+            <div className="container mx-auto py-10 px-6 md:px-0">
+              <ul className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-10">
+                <li className="text-xl font-semibold space-y-4 flex flex-col">
+                  <div className="border w-16 h-16 rounded-md flex items-center justify-center border-gray-300 border-t-gray-200 border-l-gray-200 bg-white shadow-sm text-purple-800">
+                    <FileText />
+                  </div>
+                  <div className="leading-normal max-w-sm">
+                    AI Koncipient rychle analyzuje text
+                  </div>
+                </li>
+                <li className="text-xl font-semibold space-y-4 flex flex-col">
+                  <div className="border w-16 h-16 rounded-md flex items-center justify-center border-gray-300 border-t-gray-200 border-l-gray-200 bg-white shadow-sm text-purple-800">
+                    <Glasses />
+                  </div>
+                  <div className="leading-normal max-w-sm">
+                    AI Koncipient během několika vteřin přečte až 4000 znaků
+                  </div>
+                </li>
+                <li className="text-xl font-semibold space-y-4 flex flex-col">
+                  <div className="border w-16 h-16 rounded-md flex items-center justify-center border-gray-300 border-t-gray-200 border-l-gray-200 bg-white shadow-sm text-purple-800">
+                    <LayoutDashboard />
+                  </div>
+                  <div className="leading-normal max-w-sm">
+                    AI Koncipient vytvoří srozumitelný přehled problémů na které
+                    během čtení narazil
+                  </div>
+                </li>
+                <li className="text-xl font-semibold space-y-4 flex flex-col">
+                  <div className="border w-16 h-16 rounded-md flex items-center justify-center border-gray-300 border-t-gray-200 border-l-gray-200 bg-white shadow-sm text-purple-800">
+                    <Pilcrow />
+                  </div>
+                  <div className="leading-normal max-w-sm">
+                    AI Koncipient nedává právní rady
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          <div>
-            <div className="container mx-auto md:flex md:space-x-5">
-              <div className="rounded-2xl border w-full shadow-xl p-8 space-y-4">
-                <h2 className={["text-2xl font-semibold", figtree.className].join(' ')}>Individuální čtení</h2>
+          <div className="py-20">
+            <div className="container mx-auto px-6 space-y-10 md:space-y-0 md:px-0 md:flex md:space-x-5">
+              <div className="rounded-2xl border w-full shadow-xl p-8 space-y-4 border-gray-300 border-l-gray-200 border-t-gray-200">
+                <h2
+                  className={["text-2xl font-semibold", figtree.className].join(
+                    " "
+                  )}
+                >
+                  Individuální čtení
+                </h2>
                 <div>
-                  <p className="border border-green-600 bg-green-50 py-1 px-2 inline-block rounded font-semibold text-green-700">20 Kč</p>
+                  <p className="border border-green-600 bg-green-50 py-1 px-2 inline-block rounded font-semibold text-green-700">
+                    20 Kč
+                  </p>
                 </div>
-                <ul className="list-inside list-disc">
-                  <li>Až 4 000 znaků</li>
-                  <li>Slabiny</li>
-                  <li>Sumarizace</li>
-                  <li>Návrhy úprav</li>
+                <ul className="space-y-2">
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Až 4 000 znaků</div>
+                  </li>
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Slabiny</div>
+                  </li>
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Sumarizace</div>
+                  </li>
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Návrhy úprav</div>
+                  </li>
                 </ul>
                 <Link
                   href="https://app.koncipient.info"
                   className={[
-                    "text-base font-semibold bg-black text-white py-2 px-5 rounded-md block text-center transition",
-                    "hover:bg-purple-800",
+                    "text-base font-semibold bg-black text-white py-2 px-5 rounded-md block text-center transition shadow-xl",
+                    "hover:bg-purple-800 hover:shadow-2xl",
                     "md:inline-block",
                     figtree.className,
                   ].join(" ")}
@@ -105,13 +166,30 @@ export default function Home() {
                   Přečíst smlouvu
                 </Link>
               </div>
-              <div className="rounded-2xl border w-full shadow-xl p-8 space-y-4">
-              <h2 className={["text-2xl font-semibold", figtree.className].join(' ')}>Advokátní kancelář</h2>
-                <p className="border border-gray-600 bg-gray-50 py-1 px-2 inline-block rounded font-semibold text-gray-700">Individuální cena</p>
-                <ul className="list-inside list-disc">
-                  <li>Neomezené znaky</li>
-                  <li>Analýza po odstavcích</li>
-                  <li>Učení AI koncipienta</li>
+              <div className="rounded-2xl border w-full shadow-xl p-8 space-y-4 border-gray-300 border-l-gray-200 border-t-gray-200">
+                <h2
+                  className={["text-2xl font-semibold", figtree.className].join(
+                    " "
+                  )}
+                >
+                  Advokátní kancelář
+                </h2>
+                <p className="border border-gray-600 bg-gray-50 py-1 px-2 inline-block rounded font-semibold text-gray-700">
+                  Individuální cena
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Neomezené znaky</div>
+                  </li>
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Analýza po odstavcích</div>
+                  </li>
+                  <li className="flex space-x-2">
+                    <CheckCircle2 />
+                    <div>Učení AI koncipienta</div>
+                  </li>
                 </ul>
                 <Link
                   href="https://app.koncipient.info"
@@ -127,38 +205,62 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div>
-            <div className="container mx-auto">
+          <div className="bg-gray-900 py-10 px-4 md:px-0 md:py-20">
+            <div className="container mx-auto space-y-10">
               <div>
-                <h2>Příklad analýzy</h2>
-                <p>
-                  Vzorová smlouva o dílo, běžně dostupná na internetu. Do
-                  smlouvy nebyly vloženy žádné konkrétní údaje.
-                </p>
+                <h2
+                  className={[
+                    "text-4xl md:text-5xl font-bold max-w-2xl leading-tight text-white",
+                    figtree.className,
+                  ].join(" ")}
+                >
+                  <Eye className="w-20 h-20" />
+                  <div>Příklad analýzy</div>
+                </h2>
               </div>
-              <div>
-                <ul>
-                  <li>
-                    Nepřesně definovaný předmět smlouvy - specifikace Díla by
-                    měla být uvedena v samotné smlouvě, nikoliv v příloze.
-                  </li>
-                  <li>
-                    Nejasná formulace ohledně přenechání provádění Díla třetím
-                    osobám - musí být jasně specifikováno, za jakých okolností a
-                    pod jakými podmínkami může být Dílo přenecháno
-                    subdodavatelům.
-                  </li>
-                  <li>
-                    Neurčitý způsob určení ceny za Dílo - cena by měla být
-                    specifikována konkrétně a podrobněji, než pouze jako odhad
-                    nebo rozpočet.
-                  </li>
-                </ul>
+              <div className="md:flex">
+                <div>
+                  <div className="bg-white shadow-lg p-10">
+                    <p>
+                      Vzorová smlouva o dílo, běžně dostupná na internetu. Do
+                      smlouvy nebyly vloženy žádné konkrétní údaje.
+                    </p>
+                  </div>
+                </div>
+                <div className="py-10 md:py-0">
+                  <ul className="space-y-5 md:px-10">
+                    <li className="text-white flex space-x-4">
+                      <CheckCircle className="flex-shrink-0" />
+                      <div className="max-w-prose">
+                        Nepřesně definovaný předmět smlouvy - specifikace Díla
+                        by měla být uvedena v samotné smlouvě, nikoliv v
+                        příloze.
+                      </div>
+                    </li>
+                    <li className="text-white flex space-x-4">
+                      <CheckCircle className="flex-shrink-0" />
+                      <div className="max-w-prose">
+                        Nejasná formulace ohledně přenechání provádění Díla
+                        třetím osobám - musí být jasně specifikováno, za jakých
+                        okolností a pod jakými podmínkami může být Dílo
+                        přenecháno subdodavatelům.
+                      </div>
+                    </li>
+                    <li className="text-white flex space-x-4">
+                      <CheckCircle className="flex-shrink-0" />
+                      <div className="max-w-prose">
+                        Neurčitý způsob určení ceny za Dílo - cena by měla být
+                        specifikována konkrétně a podrobněji, než pouze jako
+                        odhad nebo rozpočet.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </main>
-        <footer>
+        <footer className="bg-gray-900">
           <div className="container mx-auto">&copy; 2023 koncipient.info</div>
         </footer>
       </div>
